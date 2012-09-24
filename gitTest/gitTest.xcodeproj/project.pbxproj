@@ -379,6 +379,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gitTest/gitTest-Prefix.pch";
 				INFOPLIST_FILE = "gitTest/gitTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -390,6 +391,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gitTest/gitTest-Prefix.pch";
 				INFOPLIST_FILE = "gitTest/gitTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -448,6 +450,7 @@
 				7A7C204F1607061C00ECB6C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A7C20501607061C00ECB6C4 /* Build configuration list for PBXNativeTarget "gitTestTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +459,7 @@
 				7A7C20521607061C00ECB6C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

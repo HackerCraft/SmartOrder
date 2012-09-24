@@ -13,9 +13,54 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSDictionary *userInfo = [launchOptions objectForKey:
+                              UIApplicationLaunchOptionsRemoteNotificationKey];
+    
+    if(userInfo != nil)
+    {
+        [self application:application didFinishLaunchingWithOptions:userInfo];
+    }
+    
+    // APNS에 디바이스를 등록한다.
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeAlert|
+     UIRemoteNotificationTypeBadge|
+     UIRemoteNotificationTypeSound];
+    
+    
     return YES;
 }
-							
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSMutableString *deviceId = [NSMutableString string];
+    const unsigned char* ptr = (const unsigned char*) [deviceToken bytes];
+    
+    for(int i = 0 ; i < 32 ; i++)
+    {
+        [deviceId appendFormat:@"%02x", ptr[i]];
+    }
+    
+    NSLog(@"APNS Device Token: %@", deviceId);
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    NSString *string = [NSString stringWithFormat:@"%@", userInfo];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                    message:string delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+
+}
+- (void)applicationDidFinishLaunching:(UIApplication *)application
+{
+    // didFinishLaunchingWithOptions를 구현할 경우 사용되지 않는다.
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
