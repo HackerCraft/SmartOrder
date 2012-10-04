@@ -1,0 +1,22 @@
+
+[10월 9일] --> email
+각자 롤에 대한 작업 결과들이 github에 업로드가 되어야 한다.
+진행사항에 대한 스케쥴 작성 (엑셀)
+참고할 문서, 사업계획서 
+
+사용자 변경하기
+SmartOrder --> Owner 변경 --> Collaborator
+노서영 -->  Collaborator로 변경
+
+
+
+10월 9일 미팅
+10월 17일 미팅
+10월 25일 미팅
+
+
+MDS
+http://mdsacademy.co.kr/academy/
+http://kldp.org/
+
+
